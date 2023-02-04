@@ -26,6 +26,7 @@ class _goalScreenState extends State<goalScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff261038),
         title: const Text('My Goals'),
       ),
       body: Column(

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'savings.dart';
 
+import 'investing.dart';
+
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -18,6 +21,8 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: true,
+
           title: Text('Penny Wise'),
           backgroundColor: Color(0xff261038),
           centerTitle: true,
@@ -82,17 +87,24 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Container(
+
+                  width: double.infinity,
                   margin: EdgeInsets.all(5),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xff261038),
                       padding:
+
+                          EdgeInsets.symmetric(horizontal: 60, vertical: 20),
                           EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+
                     ),
                     onPressed: () {},
                     child: Text('My Wallet'),
                   )),
               Container(
+
+                  width: double.infinity,
                   margin: EdgeInsets.all(5),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -106,6 +118,9 @@ class HomePage extends StatelessWidget {
                     child: Text('My Savings'),
                   )),
               Container(
+
+                  width: double.infinity,
+
                   margin: EdgeInsets.all(5),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -113,7 +128,12 @@ class HomePage extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                     ),
+
+                    onPressed: () {
+                      _navigateToiScreen(context);
+                    },\
                     onPressed: () {},
+
                     child: Text('Investing'),
                   )),
             ],
@@ -126,5 +146,11 @@ class HomePage extends StatelessWidget {
   void _navigateToScreen(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => goalScreen()));
+  }
+
+
+  void _navigateToiScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => investingscreen()));
   }
 }
